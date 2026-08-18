@@ -14,3 +14,9 @@ export const SearchMovie = async (query, page = 1) => {
     return data;
 
 }
+
+export const fetchUpcomingMovie = async (page = 1) => {
+    const response = await fetch(`${BASE_URL}/movie/upcoming?api_key=${API_KEY}&page=${page}`)
+    const data = await response.json();
+    return data;
+}
